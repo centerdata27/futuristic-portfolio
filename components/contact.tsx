@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -15,30 +15,35 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", formData)
+    console.log("Form submitted:", formData);
     // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-  }
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">Get In Touch</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Get In Touch
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+            Ready to bring your ideas to life? Let's discuss your next project
+            and create something amazing together.
           </p>
         </div>
 
@@ -46,10 +51,13 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                Let's Connect
+              </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always excited to work on new projects and collaborate with innovative teams. Whether you have a
-                specific project in mind or just want to explore possibilities, I'd love to hear from you.
+                I'm always excited to work on new projects and collaborate with
+                innovative teams. Whether you have a specific project in mind or
+                just want to explore possibilities, I'd love to hear from you.
               </p>
             </div>
 
@@ -60,7 +68,9 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="text-muted-foreground">contact@example.com</p>
+                  <p className="text-muted-foreground">
+                    0kevindelacruz0@gmail.com
+                  </p>
                 </div>
               </div>
 
@@ -70,7 +80,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Phone</p>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+1 (929) 680-2591</p>
                 </div>
               </div>
 
@@ -80,7 +90,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Location</p>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Brooklyn, NY</p>
                 </div>
               </div>
             </div>
@@ -154,5 +164,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
